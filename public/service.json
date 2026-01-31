@@ -1,0 +1,80 @@
+[
+  {
+    "id": 1,
+    "serviceName": "Career Path Planning",
+    "category": "Career Strategy",
+    "price": 25,
+    "currency": "USD",
+    "counselorName": "Dr. Rahim Khan",
+    "image": "https://i.ibb.co.com/93ZZctj8/career-strategy.jpg",
+    "duration": "45 Minutes",
+    "rating": 4.8,
+    "description": "One-on-one guidance to build a clear and realistic career roadmap.",
+    "detailedDescription": "This comprehensive session is designed to bridge the gap between your current skills and your dream career. Dr. Rahim Khan will evaluate your educational background and personal interests to construct a step-by-step professional roadmap. You will gain deep insights into current industry trends, salary expectations, and the specific milestones you need to achieve over the next five years to stay competitive in the evolving global market."
+  },
+  {
+    "id": 2,
+    "serviceName": "Professional Resume Review",
+    "category": "Resume Building",
+    "price": 15,
+    "currency": "USD",
+    "counselorName": "Mr. Adam Wilson",
+    "image": "https://i.ibb.co.com/5XVz2RMh/resume-building.jpg",
+    "duration": "30 Minutes",
+    "rating": 4.6,
+    "description": "Improve your CV with expert feedback and industry-standard formatting.",
+    "detailedDescription": "A great resume is your first ticket to an interview. In this session, Mr. Adam Wilson provides a meticulous review of your current CV, focusing on ATS optimization and professional storytelling. You will learn how to highlight your achievements effectively, choose the right layout for your industry, and eliminate common errors that often lead to instant rejections by hiring managers."
+  },
+  {
+    "id": 3,
+    "serviceName": "Mock Interview Coaching",
+    "category": "Interview Coaching",
+    "price": 20,
+    "currency": "USD",
+    "counselorName": "Mr. James Carter",
+    "image": "https://i.ibb.co.com/PG0r7JXw/interview.jpg",
+    "duration": "60 Minutes",
+    "rating": 4.9,
+    "description": "Practice interviews and receive professional tips to boost confidence.",
+    "detailedDescription": "Master the art of the interview through a simulated high-pressure environment. Mr. James Carter will conduct a realistic mock interview tailored to your specific job target, followed by an in-depth feedback session. You will practice answering difficult behavioral questions, learn how to handle stress-induced pauses, and refine your body language to project confidence and competence to potential employers."
+  },
+  {
+    "id": 4,
+    "serviceName": "Overseas Study Guidance",
+    "category": "International Education",
+    "price": 30,
+    "currency": "USD",
+    "counselorName": "Dr. Hasan Ali",
+    "image": "https://i.ibb.co.com/Jj43KGkw/international-studies.jpg",
+    "duration": "50 Minutes",
+    "rating": 4.7,
+    "description": "Expert advice on studying abroad, university selection, and scholarships.",
+    "detailedDescription": "Navigating international education can be overwhelming, but this session simplifies the entire process. Dr. Hasan Ali provides expert consultancy on choosing the right country and university that aligns with your budget and career goals. Beyond just selection, you will receive vital information regarding scholarship opportunities, documentation requirements for visa processing, and cultural transition tips to ensure you are fully prepared for your journey abroad."
+  },
+  {
+    "id": 5,
+    "serviceName": "Skill Enhancement Program",
+    "category": "Professional Skills",
+    "price": 18,
+    "currency": "USD",
+    "counselorName": "Mr. Omar Faruk",
+    "image": "https://i.ibb.co.com/yFqm8P9H/skill.jpg",
+    "duration": "40 Minutes",
+    "rating": 4.5,
+    "description": "Personalized plans to improve technical and workplace skills.",
+    "detailedDescription": "In a rapidly changing job market, staying relevant is key. Mr. Omar Faruk helps you identify critical skill gaps in your current profile and suggests the most efficient learning paths to fill them. Whether you are looking to master a new software or improve your leadership abilities, this program provides you with a curated list of resources and certifications that will add the most value to your professional portfolio."
+  },
+  {
+    "id": 6,
+    "serviceName": "Personality & Aptitude Test",
+    "category": "Psychometric Assessment",
+    "price": 12,
+    "currency": "USD",
+    "counselorName": "Dr. Kevin Brooks",
+    "image": "https://i.ibb.co.com/qYPP80qk/personality-pic.jpg",
+    "duration": "25 Minutes",
+    "rating": 4.4,
+    "description": "Discover your strengths, personality traits, and career suitability.",
+    "detailedDescription": "Self-awareness is the foundation of a successful career. This automated psychometric assessment uses advanced scientific modeling to analyze your cognitive strengths and personality traits. After completing the test, you will receive an instantly generated report that highlights your natural talents and suggests specific career paths where you are most likely to excel, helping you make data-driven decisions about your professional future."
+  }
+]
