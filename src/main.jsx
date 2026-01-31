@@ -14,6 +14,8 @@ import ServiceDetails from './components/ServiceDetails/ServiceDetails.jsx';
 import AuthProvider from './providers/AuthProvider.jsx';
 import Register from './components/Register/Register.jsx';
 import Login from './components/Login/Login.jsx';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const router = createBrowserRouter([
   {
@@ -47,5 +49,6 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root')).render(
   <AuthProvider>
     <RouterProvider router={router} />
+    <ToastContainer position="top-center" />
   </AuthProvider>,
 )
