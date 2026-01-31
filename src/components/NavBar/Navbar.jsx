@@ -3,7 +3,16 @@ import { AuthContext } from "../../providers/AuthProvider";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  const {user}= useContext(AuthContext);
+  const {user,logOut}= useContext(AuthContext);
+  const handleLogOut =()=>{
+    logOut()
+    .then(()=>{
+      console.log("User logged out successfully");
+    })
+    .catch(error=>{
+      console.log("Logout error:", error);
+    });
+  }
   return (
     <div className="w-11/12 mx-auto bg-gray-50 ">
       <div className="navbar">
@@ -83,9 +92,9 @@ const Navbar = () => {
           {
             user ? (<div className="flex items-center gap-3">
         <span className="text-sm font-medium">{user.email}</span>
-        <button className="btn btn-neutral">Logout</button>
+        <button onClick={handleLogOut} className="btn btn-neutral">Logout</button>
       </div>):
-            (<Link to="/register" className="btn btn-primary ">
+            (<Link to="/login" className="btn btn-primary ">
             Login
           </Link>)
           }

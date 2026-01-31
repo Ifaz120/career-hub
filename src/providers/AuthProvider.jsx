@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth';
+import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth';
 import React, { createContext, useEffect, useState } from 'react';
 import auth from '../firebase/firebase.config';
 
@@ -26,12 +26,33 @@ const AuthProvider = ({children}) => {
     return createUserWithEmailAndPassword(auth,email,password);
   }
 
+  const googleProvider = new GoogleAuthProvider();
+
+  const userLogin = (email,password)=>{
+    setLoading(true);
+    return signInWithEmailAndPassword(auth,email,password);
+  }
+
+  const signInWithGoogle = ()=>{
+    setLoading(true);
+    return signInWithPopup(auth,googleProvider);
+  }
+
+  const logOut =()=>{
+    setLoading(true);
+    return signOut(auth);
+  }
+
   const authInfo = {
     // This is the "bag" of data we will share with the whole app.
         name: "Career Hub Test",
         user,
+        signInWithGoogle,
+        userLogin,
         setUser,
         createNewUser,
+        loading,
+        logOut
   }
 
   return (
