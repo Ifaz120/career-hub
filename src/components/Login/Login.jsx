@@ -4,9 +4,12 @@ import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const Login = () => {
-  const { userLogin, signInWithGoogle,resetPassword,loading } = useContext(AuthContext);
+  const { userLogin, signInWithGoogle, resetPassword, loading } = useContext(AuthContext);
   const navigate = useNavigate();
-  const emailRef = React.useRef();//ekhane pura form submit na korei peye jabo email
+  
+  // ekhaner pura form submit na korei peye jabo email
+  const emailRef = React.useRef();
+
   const handleLogin = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
@@ -22,17 +25,17 @@ const Login = () => {
       });
   };
 
-  const handleForgotPassword =()=>{
+  const handleForgotPassword = () => {
     const email = emailRef.current.value;
-    if(!email){
+    if (!email) {
       toast.error("Please provide your email first!");
-      return ;
+      return;
     }
     resetPassword(email)
-    .then(()=>{
-      toast.success("Password reset email sent! Check your inbox.");
-    })
-    .catch(err => toast.error(err.message));
+      .then(() => {
+        toast.success("Password reset email sent! Check your inbox.");
+      })
+      .catch(err => toast.error(err.message));
   };
 
   const handleGoogleSignIn = () => {
@@ -47,13 +50,13 @@ const Login = () => {
   };
 
   return (
-    <div className="hero bg-base-200 min-h-screen">
-      <div className="hero-content flex-col">
-        <div className="text-center">
-          <h1 className="text-5xl font-bold">Login now!</h1>
+    <div className="hero bg-base-200 min-h-screen py-8">
+      <div className="hero-content flex-col w-full px-4">
+        <div className="text-center mb-4">
+          <h1 className="text-3xl md:text-5xl font-bold">Login now!</h1>
         </div>
-        <div className="card bg-base-100 w-full max-w-sm shadow-2xl">
-          <form onSubmit={handleLogin} className="card-body">
+        <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+          <form onSubmit={handleLogin} className="card-body p-6 md:p-8">
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Email</span>
@@ -79,19 +82,26 @@ const Login = () => {
                 required
               />
               <label className="label">
-        {/* type = button ekhane refresh bondho korbe mane submit kora vabbena */}
-        <button type="button" onClick={handleForgotPassword} className="label-text-alt link link-hover text-blue-600">
-            Forgot password?
-        </button>
-    </label>
+                {/* type = button ekhane refresh bondho korbe mane submit kora vabbena */}
+                <button 
+                  type="button" 
+                  onClick={handleForgotPassword} 
+                  className="label-text-alt link link-hover text-blue-600"
+                >
+                  Forgot password?
+                </button>
+              </label>
             </div>
             <div className="form-control mt-6">
-              <button className="btn btn-primary">{loading ? <span className="loading loading-spinner"></span> : "Login"}</button>
+              <button disabled={loading} className="btn btn-primary">
+                {loading ? <span className="loading loading-spinner"></span> : "Login"}
+              </button>
             </div>
           </form>
 
           {/* Google Sign In Button */}
-          <div className="px-8 pb-4">
+          <div className="px-8 pb-8">
+            <div className="divider opacity-50">OR</div>
             <button
               onClick={handleGoogleSignIn}
               className="btn btn-outline w-full"

@@ -18,6 +18,8 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute.jsx';
 import Profile from './components/Profile/Profile.jsx';
+import Resources from './components/Contact/Contact.jsx';
+import Contact from './components/Contact/Contact.jsx';
 
 const router = createBrowserRouter([
   {
@@ -45,7 +47,13 @@ const router = createBrowserRouter([
       {
         path:'/profile',
         element: <PrivateRoute><Profile></Profile></PrivateRoute>
+      },
+    
+      {
+        path: "/contact",
+        element: <Contact></Contact>
       }
+      
 
     ]
 
