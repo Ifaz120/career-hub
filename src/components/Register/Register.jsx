@@ -1,12 +1,14 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 import { useNavigate, Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 const Register = () => {
   // Grab both tools from the bag
   const { createNewUser, signInWithGoogle ,updateUserProfile} = useContext(AuthContext);
   const navigate = useNavigate();
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -84,9 +86,15 @@ const Register = () => {
             </div>
 
             {/* Password Field */}
-            <div className="form-control">
+            <div className="form-control relative">
               <label className="label"><span className="label-text">Password</span></label>
-              <input type="password" name="password" placeholder="password" className="input input-bordered" required />
+              <input  type={showPassword? "text":"password"} name="password" placeholder="password" className="input input-bordered" required />
+              <button type='button' className="absolute right-4 top-12 text-xl"
+               onClick={()=> setShowPassword(!showPassword)}>
+                {
+                  showPassword? <FaEyeSlash></FaEyeSlash>:<FaEye></FaEye>
+                }
+              </button>
             </div>
 
             <div className="form-control mt-6">
