@@ -11,7 +11,11 @@ const Profile = () => {
     const name = e.target.name.value;
     const photo = e.target.photo.value;
 
-    updateUserProfile(name,photo)
+    //jeno ekta save korle arekta change na hoy
+    const realName= name|| user.displayName;
+    const realPhoto = photo || user.photoURL;
+
+    updateUserProfile(realName,realPhoto)
     .then(()=>{
       console.log("Updating with:", name, photo);
       toast.success("Profile Updated Successfully!");
@@ -32,7 +36,7 @@ const Profile = () => {
                     </div>
                     <div className="form-control">
                         <label className="label"><span className="label-text">Update Photo URL</span></label>
-                        <input type="text" name="photo" placeholder="New Photo URL" className="input input-bordered"  />
+                        <input defaultValue={user?.photoURL} type="text" name="photo" placeholder="New Photo URL" className="input input-bordered"  />
                     </div>
                     <button className="btn btn-primary mt-4">Save Changes</button>
                 </form>
