@@ -1,17 +1,18 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
   const {user,logOut}= useContext(AuthContext);
+  const navigate = useNavigate();
   const handleLogOut =()=>{
     logOut()
     .then(()=>{
-      console.log("User logged out successfully");
+      toast.success("Logged out successfully");
+            navigate("/login");
     })
-    .catch(error=>{
-      console.log("Logout error:", error);
-    });
+    .catch(error => toast.error(error.message));
   }
   return (
     <div className="w-11/12 mx-auto bg-gray-50 ">
@@ -91,9 +92,16 @@ const Navbar = () => {
         <div className="navbar-end">
           {
             user ? (<div className="flex items-center gap-3">
-        <span className="text-sm font-medium">{user.email}</span>
-        <button onClick={handleLogOut} className="btn btn-neutral">Logout</button>
-      </div>):
+      {/* Show Profile Image if it exists */}
+      <div className="avatar">
+        <div className="w-10 rounded-full">
+          <img src={user?.photoURL || "https://cdn-icons-png.flaticon.com/512/149/149071.png"} alt="User" />
+        </div>
+      </div>
+      
+      <Link to="/profile" className="btn btn-ghost btn-sm">My Profile</Link>
+      <button onClick={handleLogOut} className="btn btn-neutral btn-sm">Logout</button>
+    </div>):
             (<Link to="/login" className="btn btn-primary ">
             Login
           </Link>)

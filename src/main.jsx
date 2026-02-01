@@ -16,6 +16,8 @@ import Register from './components/Register/Register.jsx';
 import Login from './components/Login/Login.jsx';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute.jsx';
+import Profile from './components/Profile/Profile.jsx';
 
 const router = createBrowserRouter([
   {
@@ -39,6 +41,10 @@ const router = createBrowserRouter([
       {
         path:'/login',
         element:<Login></Login>
+      },
+      {
+        path:'/profile',
+        element: <PrivateRoute><Profile></Profile></PrivateRoute>
       }
 
     ]
