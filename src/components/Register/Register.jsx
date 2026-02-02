@@ -3,6 +3,7 @@ import { AuthContext } from '../../providers/AuthProvider';
 import { useNavigate, Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import { Helmet } from 'react-helmet-async';
 
 const Register = () => {
   // Grab both tools from the bag
@@ -60,6 +61,9 @@ const Register = () => {
 
   return (
     <div className="hero bg-base-200 min-h-screen py-8 md:py-12">
+      <Helmet>
+                <title>Career Hub | Register</title>
+            </Helmet>
       <div className="hero-content flex-col w-full px-4">
         <div className="text-center">
           {/* Responsive title size */}

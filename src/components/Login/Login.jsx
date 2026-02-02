@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-
+import { Helmet } from 'react-helmet-async';
 const Login = () => {
   const { userLogin, signInWithGoogle, resetPassword, loading } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -51,6 +51,9 @@ const Login = () => {
 
   return (
     <div className="hero bg-base-200 min-h-screen py-8">
+      <Helmet>
+                <title>Career Hub | Login</title>
+            </Helmet>
       <div className="hero-content flex-col w-full px-4">
         <div className="text-center mb-4">
           <h1 className="text-3xl md:text-5xl font-bold">Login now!</h1>

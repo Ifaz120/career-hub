@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 import { toast } from 'react-toastify';
-
+import { Helmet } from 'react-helmet-async';
 const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -10,7 +10,11 @@ const Contact = () => {
   };
 
   return (
+
     <div className="bg-gray-50 min-h-screen py-16">
+      <Helmet>
+          <title>Career Hub | Contact</title>
+      </Helmet>
       <div className="w-11/12 mx-auto max-w-6xl">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-extrabold text-gray-900">Get In Touch</h2>

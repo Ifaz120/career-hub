@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLoaderData, useParams } from 'react-router-dom';
 import { FaStar, FaRegClock, FaUserTie, FaDollarSign } from 'react-icons/fa';
-
+import { Helmet } from 'react-helmet-async';
 const ServiceDetails = () => {
   const data = useLoaderData();
   const { id } = useParams();
@@ -21,7 +21,11 @@ const ServiceDetails = () => {
   }
 
   return (
+    
     <div className="w-11/12 mx-auto mt-6 md:mt-10 mb-20">
+      <Helmet>
+    <title>Career Hub | {service?.serviceName}</title>
+</Helmet>
       <div className="card lg:card-side bg-base-100 shadow-2xl border border-gray-100 overflow-hidden">
         
         {/* Image Section */}

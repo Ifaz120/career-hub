@@ -20,6 +20,7 @@ import PrivateRoute from './components/PrivateRoute/PrivateRoute.jsx';
 import Profile from './components/Profile/Profile.jsx';
 import Resources from './components/Contact/Contact.jsx';
 import Contact from './components/Contact/Contact.jsx';
+import { HelmetProvider } from 'react-helmet-async';
 
 const router = createBrowserRouter([
   {
@@ -61,8 +62,10 @@ const router = createBrowserRouter([
 ]);
 
 createRoot(document.getElementById('root')).render(
-  <AuthProvider>
-    <RouterProvider router={router} />
-    <ToastContainer position="top-center" />
-  </AuthProvider>,
+ <HelmetProvider>
+    <AuthProvider>
+      <RouterProvider router={router} />
+      <ToastContainer position="top-center" />
+    </AuthProvider>
+  </HelmetProvider>,
 )

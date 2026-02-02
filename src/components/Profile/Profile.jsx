@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import auth from '../../firebase/firebase.config';
 import { AuthContext } from '../../providers/AuthProvider';
 import { toast } from "react-toastify";
+import { Helmet } from 'react-helmet-async';
 
 const Profile = () => {
   const { user, updateUserProfile } = useContext(AuthContext);
@@ -26,7 +27,9 @@ const Profile = () => {
   return (
    
     <div className="flex flex-col items-center gap-5 py-10 px-4 min-h-[calc(100vh-200px)]">
-      
+      <Helmet>
+                <title>Career Hub | My Profile</title>
+            </Helmet>
       
       <h2 className="text-2xl md:text-3xl font-bold text-center">
         Welcome, {user?.displayName}
