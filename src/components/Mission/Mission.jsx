@@ -1,43 +1,91 @@
-import React from 'react';
-import { FaRocket, FaUsers, FaLightbulb } from 'react-icons/fa';
+import React from "react";
+import { FaRocket, FaUsers, FaLightbulb } from "react-icons/fa";
 
 const Mission = () => {
-    return (
-        
-        <div className="py-12 md:py-20 bg-white">
-            <div className="w-11/12 mx-auto text-center">
-                
-                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">Our Missions</h2>
-                <p className="text-gray-600 max-w-2xl mx-auto mb-10 md:mb-16 px-2 text-sm md:text-base">
-                    We are dedicated to bridging the gap between talent and opportunity with a focus on innovation and community.
-                </p>
-
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-10">
-                    {/* Mission 1 */}
-                    
-                    <div className="card bg-base-100 shadow-xl p-6 md:p-8 border-t-4 border-primary hover:shadow-2xl transition-shadow duration-300">
-                        <div className="text-3xl md:text-4xl text-primary mb-4 flex justify-center"><FaRocket /></div>
-                        <h3 className="text-lg md:text-xl font-bold mb-2">Accelerate Growth</h3>
-                        <p className="text-gray-500 text-sm md:text-base">Helping individuals and companies reach their full potential faster than ever.</p>
-                    </div>
-
-                    {/* Mission 2 */}
-                    <div className="card bg-base-100 shadow-xl p-6 md:p-8 border-t-4 border-secondary hover:shadow-2xl transition-shadow duration-300">
-                        <div className="text-3xl md:text-4xl text-secondary mb-4 flex justify-center"><FaUsers /></div>
-                        <h3 className="text-lg md:text-xl font-bold mb-2">Build Community</h3>
-                        <p className="text-gray-500 text-sm md:text-base">Creating a network where professionals can connect and share knowledge.</p>
-                    </div>
-
-                    {/* Mission 3 */}
-                    <div className="card bg-base-100 shadow-xl p-6 md:p-8 border-t-4 border-accent hover:shadow-2xl transition-shadow duration-300">
-                        <div className="text-3xl md:text-4xl text-accent mb-4 flex justify-center"><FaLightbulb /></div>
-                        <h3 className="text-lg md:text-xl font-bold mb-2">Inspire Innovation</h3>
-                        <p className="text-gray-500 text-sm md:text-base">Encouraging creative solutions to the most challenging career hurdles.</p>
-                    </div>
-                </div>
+  return (
+    <div className="py-16 md:py-24 bg-white overflow-hidden">
+      <div className="w-11/12 mx-auto">
+        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+          {/* Left Side: Content */}
+          <div className="lg:w-1/2 space-y-8">
+            <div>
+              <h2 className="text-sm uppercase tracking-widest text-primary font-bold mb-2">
+                Our Core Purpose
+              </h2>
+              <h3 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
+                We are on a mission to{" "}
+                <span className="text-primary">redefine</span> career growth.
+              </h3>
             </div>
+
+            <div className="space-y-8">
+              {/* Item 1 */}
+              <div className="flex gap-6">
+                <div className="flex-shrink-0 w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center text-xl">
+                  <FaRocket></FaRocket>
+                </div>
+                <div>
+                  <h4 className="text-xl font-bold text-gray-800">
+                    Accelerate Growth
+                  </h4>
+                  <p className="text-gray-600 mt-1">
+                    Helping individuals and companies reach their full potential
+                    faster than ever with data-driven strategies.
+                  </p>
+                </div>
+              </div>
+
+              {/* Item 2 */}
+              <div className="flex gap-6">
+                <div className="flex-shrink-0 w-12 h-12 bg-secondary/10 text-secondary rounded-xl flex items-center justify-center text-xl">
+                  <FaUsers></FaUsers>
+                </div>
+                <div>
+                  <h4 className="text-xl font-bold text-gray-800">
+                    Build Community
+                  </h4>
+                  <p className="text-gray-600 mt-1">
+                    Creating a vibrant network where professionals can connect,
+                    collaborate, and share valuable knowledge.
+                  </p>
+                </div>
+              </div>
+
+              {/* Item 3 */}
+              <div className="flex gap-6">
+                <div className="flex-shrink-0 w-12 h-12 bg-accent/10 text-accent rounded-xl flex items-center justify-center text-xl">
+                  <FaLightbulb></FaLightbulb>
+                </div>
+                <div>
+                  <h4 className="text-xl font-bold text-gray-800">
+                    Inspire Innovation
+                  </h4>
+                  <p className="text-gray-600 mt-1">
+                    Encouraging creative, out-of-the-box solutions to the most
+                    challenging hurdles in today's job market.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Side: Visual Element */}
+          <div className="lg:w-1/2 relative">
+            <div className="absolute -top-10 -right-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
+            <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-secondary/5 rounded-full blur-3xl"></div>
+
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500">
+              <img
+                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                alt="Team working"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default Mission;
