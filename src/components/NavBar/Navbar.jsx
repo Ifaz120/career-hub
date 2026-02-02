@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import logoImg from '../../assets/logo.png';
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -43,7 +44,7 @@ const Navbar = () => {
           </div>
           
           <Link to="/" className="flex items-center">
-            <img className="h-10 md:h-14 lg:h-16 w-auto object-contain" src="/src/assets/logo.png" alt="Logo" />
+            <img className="h-10 md:h-14 lg:h-16 w-auto object-contain" src={logoImg} alt="Logo" />
           </Link>
         </div>
 

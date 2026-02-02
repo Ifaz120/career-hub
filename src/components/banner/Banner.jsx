@@ -7,6 +7,10 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
+import banImg1 from '../../assets/c5.jpg';
+import banImg2 from '../../assets/c4.jpg';
+import banImg3 from '../../assets/c6.avif';
+import banImg4 from '../../assets/c8.jpg';
 
 const Banner = () => {
   const navigate = useNavigate(); // Initialize the navigate function
@@ -45,10 +49,7 @@ const Banner = () => {
         className="w-full h-full z-10"
       >
         {[
-          "/src/assets/c5.jpg",
-          "/src/assets/c4.jpg",
-          "/src/assets/c6.avif",
-          "/src/assets/c8.jpg"
+          banImg1, banImg2, banImg3, banImg4
         ].map((imgSrc, index) => (
           <SwiperSlide key={index}>
             <div className="relative w-full h-full">

@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaFacebook, FaTwitter, FaLinkedin, FaGithub } from 'react-icons/fa';
 import { Link } from 'react-router-dom'; // Use Link for internal routing
-
+import logoImg from '../../assets/logo.png';
 const Footer = () => {
   return (
     
@@ -11,7 +11,7 @@ const Footer = () => {
         {/* Brand Section */}
         <aside className="flex flex-col items-center md:items-start">
           <img 
-            src="/src/assets/logo.png" 
+            src={logoImg} 
             alt="Logo" 
             className="h-12 md:h-16 mb-4 bg-white rounded-lg p-1" 
           />
